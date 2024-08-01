@@ -1,0 +1,14 @@
+  #!/bin/bash
+  # baraction.sh script for spectrwm status bar
+
+  SLEEP_SEC=5  # set bar_delay = 5 in /etc/spectrwm.conf
+  acpi > ~/.config/spectrwm/tmp.txt
+  out='~/.config/spectrwm/tmp.txt'
+  BAT=awk '{print $4}' $out
+  #loops forever outputting a line every SLEEP_SEC secs
+  while :; do
+    echo -e "Hello World! $BAT"
+    sleep $SLEEP_SEC
+  done
+
+
